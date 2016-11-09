@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="zhangchuzhao.site.demo">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name="zhangchuzhao.site.lifecycle.MainActivity">
+
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN"/> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER"/> -->
+            <!-- </intent-filter> -->
+        </activity>
+        <activity
+            android:name="zhangchuzhao.site.lifecycle.DialogActivity"
+            android:theme="@android:style/Theme.Dialog">
+        </activity>
+        <activity android:name="zhangchuzhao.site.lifecycle.NormalActivity">
+        </activity>
+        <activity android:name=".FirstActivity">
+
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN"/> -->
+            <!-- <category android:name="android.intent.category.LAUNCHER"/> -->
+            <!-- </intent-filter> -->
+        </activity>
+        <activity android:name=".SecondActivity">
+            <intent-filter>
+                <action android:name="zhangchuzhao.site.demo.ACTION_START"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="zhangchuzhao.site.demo.MY_CATEGORY"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".ThirdActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+
+                <data android:scheme="http"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="zhangchuzhao.site.launchmode.StandardActivity"
+            android:label="This is launchActivity"
+            android:launchMode="singleTask">
+
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN"/> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER"/> -->
+            <!-- </intent-filter> -->
+        </activity>
+        <activity
+            android:name="zhangchuzhao.site.launchmode.OtherActivity"
+            android:launchMode="singleInstance">
+        </activity>
+        <activity android:name="zhangchuzhao.site.launchmode.LastActivity">
+        </activity>
+        <activity android:name="zhangchuzhao.site.skill.OneActivity">
+
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN"/> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER"/> -->
+            <!-- </intent-filter> -->
+        </activity>
+        <activity android:name="zhangchuzhao.site.skill.TwoActivity">
+        </activity>
+        <activity android:name="zhangchuzhao.site.skill.ThreeActivity">
+        </activity>
+        <activity android:name="zhangchuzhao.site.ui.UIActivity">
+
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN"/> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER"/> -->
+            <!-- </intent-filter> -->
+        </activity>
+        <activity android:name="zhangchuzhao.site.ui.CustomViewActivity">
+
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN"/> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER"/> -->
+            <!-- </intent-filter> -->
+        </activity>
+        <activity android:name="zhangchuzhao.site.layout.LayoutActivity">
+
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN"/> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER"/> -->
+            <!-- </intent-filter> -->
+        </activity>
+        <activity android:name="zhangchuzhao.site.layout.SampleActivity">
+        </activity>
+        <activity android:name="zhangchuzhao.site.layout.RelativeLayoutActivity">
+        </activity>
+        <activity android:name="zhangchuzhao.site.layout.RelativeLayout2">
+        </activity>
+        <activity android:name="zhangchuzhao.site.layout.FrameLayoutActivity">
+        </activity>
+        <activity android:name="zhangchuzhao.site.layout.TableLayoutActivity">
+        </activity>
+        <activity android:name="zhangchuzhao.site.ui.ListViewActivity">
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MAIN"/>-->
+
+                <!--<category android:name="android.intent.category.LAUNCHER"/>-->
+            <!--</intent-filter>-->
+        </activity>
+        <activity android:name="zhangchuzhao.site.ui.FruitListViewActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
