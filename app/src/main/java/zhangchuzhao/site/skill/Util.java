@@ -6,6 +6,10 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.widget.Toast;
 
+import java.lang.reflect.Field;
+
+import zhangchuzhao.site.demo.R;
+
 /**
  * Created by Devin on 2016/11/9.
  */
@@ -58,5 +62,31 @@ public class Util {
         progressDialog.setMessage("Loading");
         progressDialog.setCancelable(true);
         progressDialog.show();
+    }
+
+    /**
+     * 通过资源名称获取其资源ID
+     * @param contex 调用者上下文环境
+     * @param resourceName 资源名
+     * @return
+     */
+    public static int getResourceIdByResourceName(Context contex, String resourceName){
+        int resourceId = 0;
+        try {
+            Field field = R.drawable.class.getField(resourceName);
+            field.setAccessible(true);
+            try {
+                resourceId = field.getInt(null);
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            }
+        } catch (NoSuchFieldException e) {
+            e.printStackTrace();
+        }
+        return resourceId;
+    }
+
+    public static int getResourceIdByResourceName(Context context, String name, String type, String packageName){
+        return context.getResources().getIdentifier(name, type, packageName);
     }
 }
