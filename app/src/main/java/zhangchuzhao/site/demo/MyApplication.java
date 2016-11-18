@@ -1,6 +1,7 @@
 package zhangchuzhao.site.demo;
 
 import android.app.Application;
+import android.content.Context;
 import android.util.Log;
 
 /**
@@ -14,11 +15,13 @@ public class MyApplication extends Application {
     //}
 
     private static MyApplication app;
+    private static Context contex;
 
     @Override
     public void onCreate(){
         super.onCreate();
         app = this; //直接通过this赋值当前Application实例
+        contex = getApplicationContext();
 
         String packageName = getPackageName();//已经完成上下文环境初始化，不会报错
         Log.d("context", "package name is: " + packageName);
@@ -26,5 +29,9 @@ public class MyApplication extends Application {
 
     public static MyApplication getInstance(){
         return app;
+    }
+
+    public static Context getContex(){
+        return contex;
     }
 }

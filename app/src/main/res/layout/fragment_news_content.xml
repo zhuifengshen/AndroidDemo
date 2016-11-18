@@ -1,0 +1,47 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             tools:context="zhangchuzhao.site.news.NewsContentFragment">
+
+    <!--默认新闻内容设置为不可见-->
+
+    <LinearLayout
+        android:id="@+id/visibility_layout"
+        android:orientation="vertical"
+        android:visibility="invisible"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/news_title"
+            android:gravity="center"
+            android:padding="10dp"
+            android:textSize="20sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <ImageView
+            android:src="@drawable/spilt_line"
+            android:scaleType="fitXY"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
+
+        <TextView
+            android:id="@+id/news_content"
+            android:padding="15dp"
+            android:textSize="18sp"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"/>
+
+    </LinearLayout>
+
+    <ImageView
+        android:src="@drawable/spilt_line_vertical"
+        android:scaleType="fitXY"
+        android:layout_alignParentLeft="true"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"/>
+
+</RelativeLayout>

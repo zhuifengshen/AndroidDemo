@@ -2,15 +2,15 @@ package zhangchuzhao.site.skill;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.util.Log;
 
 public class BaseActivity extends Activity {
+
+    public static String LOGTAG;//当前Activity类名，用于输出Log时使用
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //启动每个活动时,打印其名称
-        Log.d("baseactivity", getClass().getSimpleName());
+        LOGTAG = getClass().getSimpleName();//初始化当前Activity类名
         ActivityCollector.addActivity(this);
     }
 

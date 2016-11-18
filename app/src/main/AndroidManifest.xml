@@ -2,6 +2,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="zhangchuzhao.site.demo">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:name=".MyApplication"
         android:allowBackup="true"
@@ -41,6 +48,7 @@
         </activity>
         <activity android:name=".ThirdActivity">
             <intent-filter>
+
                 <action android:name="android.intent.action.VIEW"/>
 
                 <category android:name="android.intent.category.DEFAULT"/>
@@ -115,6 +123,13 @@
         <activity android:name="zhangchuzhao.site.layout.FrameLayoutActivity">
         </activity>
         <activity android:name="zhangchuzhao.site.layout.TableLayoutActivity">
+
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN"/> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER"/> -->
+            <!-- </intent-filter> -->
         </activity>
         <activity android:name="zhangchuzhao.site.ui.ListViewActivity">
 
@@ -153,13 +168,146 @@
             <!-- </intent-filter> -->
         </activity>
         <activity android:name="zhangchuzhao.site.fragment.FragmentActivity">
+
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN"/> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER"/> -->
+            <!-- </intent-filter> -->
+        </activity>
+        <activity android:name="zhangchuzhao.site.view.ViewActivity">
+
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN"/> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER"/> -->
+            <!-- </intent-filter> -->
+        </activity>
+        <activity android:name="zhangchuzhao.site.news.NewsContentActivity">
+        </activity>
+        <activity android:name="zhangchuzhao.site.news.NewsClient">
+
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN"/> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER"/> -->
+            <!-- </intent-filter> -->
+        </activity>
+        <activity android:name="zhangchuzhao.site.broadcast.BroadcastActivity">
+
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN"/> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER"/> -->
+            <!-- </intent-filter> -->
+        </activity>
+
+        <receiver android:name="zhangchuzhao.site.broadcast.BootCompleteReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="zhangchuzhao.site.broadcast.MyBroadcastReceiver">
+            <intent-filter android:priority="81">
+                <action android:name="site.zhangchuzhao.broadcast.MY_BROADCAST"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="zhangchuzhao.site.broadcast.AnotherBroadcastReceiver">
+            <intent-filter android:priority="80">
+                <action android:name="site.zhangchuzhao.broadcast.MY_BROADCAST"/>
+            </intent-filter>
+        </receiver>
+
+        <activity android:name="zhangchuzhao.site.skill.ForceOfflineActivity">
+        </activity>
+
+        <receiver android:name="zhangchuzhao.site.broadcast.ForceOfflineReceiver">
+            <intent-filter>
+                <action android:name="site.zhangchuzhao.broadcast.FORCEOFFLINE"/>
+            </intent-filter>
+        </receiver>
+
+        <activity android:name="zhangchuzhao.site.permission.CallPhoneActivity">
+
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN"/> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER"/> -->
+            <!-- </intent-filter> -->
+        </activity>
+        <activity android:name="zhangchuzhao.site.thread.UIThreadActivity">
+
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN"/> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER"/> -->
+            <!-- </intent-filter> -->
+        </activity>
+        <activity android:name="zhangchuzhao.site.thread.ProgressActivity">
+
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN"/> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER"/> -->
+            <!-- </intent-filter> -->
+        </activity>
+
+        <service android:name="zhangchuzhao.site.service.MyService">
+        </service>
+
+        <activity android:name="zhangchuzhao.site.service.ServiceActivity">
+
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN"/> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER"/> -->
+            <!-- </intent-filter> -->
+        </activity>
+        <activity android:name="zhangchuzhao.site.notification.NotificationActivity">
+
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN"/> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER"/> -->
+            <!-- </intent-filter> -->
+        </activity>
+        <activity android:name="zhangchuzhao.site.notification.WishesActivity">
+        </activity>
+        <activity android:name="zhangchuzhao.site.database.DatabaseActivity">
+
+             <!--<intent-filter>-->
+             <!--<action android:name="android.intent.action.MAIN"/>-->
+
+
+             <!--<category android:name="android.intent.category.LAUNCHER"/>-->
+             <!--</intent-filter>-->
+        </activity>
+
+        <service android:name="zhangchuzhao.site.service.MyIntentService">
+        </service>
+
+        <receiver android:name="zhangchuzhao.site.service.AlarmReceiver">
+        </receiver>
+
+        <service android:name="zhangchuzhao.site.service.LongRunningService"/>
+
+        <activity android:name="zhangchuzhao.site.web.WebActivity">
             <!--<intent-filter>-->
                 <!--<action android:name="android.intent.action.MAIN"/>-->
 
                 <!--<category android:name="android.intent.category.LAUNCHER"/>-->
             <!--</intent-filter>-->
         </activity>
-        <activity android:name="zhangchuzhao.site.view.ViewActivity">
+        <activity android:name="zhangchuzhao.site.web.HttpActivitiy">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 

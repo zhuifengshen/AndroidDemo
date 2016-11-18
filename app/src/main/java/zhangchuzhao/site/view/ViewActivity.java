@@ -2,6 +2,7 @@ package zhangchuzhao.site.view;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
@@ -20,6 +21,8 @@ public class ViewActivity extends Activity {
         setContentView(R.layout.activity_view);
 
         viewLayout = (LinearLayout)findViewById(R.id.activity_view);
+        Log.d("parent", "嵌套外层类：" + viewLayout.getParent());
+
         LayoutInflater layoutInflater = LayoutInflater.from(this);
         View buttonLayout = layoutInflater.inflate(R.layout.button_layout, null);
         viewLayout.addView(buttonLayout);
