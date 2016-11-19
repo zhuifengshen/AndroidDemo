@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="zhangchuzhao.site.demo">
 
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <uses-permission android:name="android.permission.CALL_PHONE"/>
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
@@ -48,7 +49,6 @@
         </activity>
         <activity android:name=".ThirdActivity">
             <intent-filter>
-
                 <action android:name="android.intent.action.VIEW"/>
 
                 <category android:name="android.intent.category.DEFAULT"/>
@@ -284,12 +284,10 @@
         </activity>
         <activity android:name="zhangchuzhao.site.database.DatabaseActivity">
 
-             <!--<intent-filter>-->
-             <!--<action android:name="android.intent.action.MAIN"/>-->
-
-
-             <!--<category android:name="android.intent.category.LAUNCHER"/>-->
-             <!--</intent-filter>-->
+             <intent-filter>
+             <action android:name="android.intent.action.MAIN"/>
+             <category android:name="android.intent.category.LAUNCHER"/>
+             </intent-filter>
         </activity>
 
         <service android:name="zhangchuzhao.site.service.MyIntentService">
@@ -301,18 +299,27 @@
         <service android:name="zhangchuzhao.site.service.LongRunningService"/>
 
         <activity android:name="zhangchuzhao.site.web.WebActivity">
+
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN"/> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER"/> -->
+            <!-- </intent-filter> -->
+        </activity>
+        <activity android:name="zhangchuzhao.site.web.HttpActivitiy">
             <!--<intent-filter>-->
                 <!--<action android:name="android.intent.action.MAIN"/>-->
 
                 <!--<category android:name="android.intent.category.LAUNCHER"/>-->
             <!--</intent-filter>-->
         </activity>
-        <activity android:name="zhangchuzhao.site.web.HttpActivitiy">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+        <activity android:name="zhangchuzhao.site.map.MapActivity">
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MAIN"/>-->
 
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
+                <!--<category android:name="android.intent.category.LAUNCHER"/>-->
+            <!--</intent-filter>-->
         </activity>
     </application>
 

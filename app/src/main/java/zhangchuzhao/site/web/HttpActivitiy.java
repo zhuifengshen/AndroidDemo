@@ -127,7 +127,8 @@ public class HttpActivitiy extends BaseActivity implements View.OnClickListener{
                 Looper.prepare();
                 Util.showToastMessage(HttpActivitiy.this, "网络请求成功");//java.lang.RuntimeException: Can't create handler inside thread that has not called Looper.prepare()
                 //Util.showToastMessage(MyApplication.getContex(), "网络请求成功app");
-                Looper.loop();
+                Looper.loop();//接下如果需要继续执行下面代码，则需要调用quit()方法
+                Looper.myLooper().quit();
             }
 
             @Override
