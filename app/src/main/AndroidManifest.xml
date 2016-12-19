@@ -9,6 +9,7 @@
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
     <uses-permission android:name="android.permission.CALL_PHONE"/>
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
 
     <application
         android:name=".MyApplication"
@@ -283,11 +284,11 @@
         <activity android:name="zhangchuzhao.site.notification.WishesActivity">
         </activity>
         <activity android:name="zhangchuzhao.site.database.DatabaseActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
 
-             <intent-filter>
-             <action android:name="android.intent.action.MAIN"/>
-             <category android:name="android.intent.category.LAUNCHER"/>
-             </intent-filter>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
         </activity>
 
         <service android:name="zhangchuzhao.site.service.MyIntentService">
@@ -308,13 +309,47 @@
             <!-- </intent-filter> -->
         </activity>
         <activity android:name="zhangchuzhao.site.web.HttpActivitiy">
-            <!--<intent-filter>-->
-                <!--<action android:name="android.intent.action.MAIN"/>-->
 
-                <!--<category android:name="android.intent.category.LAUNCHER"/>-->
-            <!--</intent-filter>-->
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN"/> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER"/> -->
+            <!-- </intent-filter> -->
         </activity>
         <activity android:name="zhangchuzhao.site.map.MapActivity">
+
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN"/> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER"/> -->
+            <!-- </intent-filter> -->
+        </activity>
+        <activity android:name="zhangchuzhao.site.provider.ContactActivity">
+
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN"/> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER"/> -->
+            <!-- </intent-filter> -->
+        </activity>
+
+        <provider
+            android:name="zhangchuzhao.site.provider.MyProvider"
+            android:authorities="zhangchuzhao.site.provider"
+            android:enabled="false"
+            android:exported="false">
+        </provider>
+        <provider
+            android:name="zhangchuzhao.site.database.MyDatabaseProvider"
+            android:authorities="zhangchuzhao.site.database.provider"
+            android:enabled="true"
+            android:exported="true">
+        </provider>
+
+        <activity android:name="zhangchuzhao.site.provider.ProviderActivity">
             <!--<intent-filter>-->
                 <!--<action android:name="android.intent.action.MAIN"/>-->
 

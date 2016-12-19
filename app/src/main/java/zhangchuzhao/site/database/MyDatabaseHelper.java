@@ -19,7 +19,8 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
             + "author text,"
             + "pages integer,"
             + "price real,"
-            + "name text)";
+            + "name text,"
+            + "category_id integer)";
 
     public static final String CREATE_CATEGORY = "create table Category ("
             + "id integer primary key autoincrement,"
@@ -33,6 +34,7 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db){
+        //直接安装第二步的用户两个表都创建
         db.execSQL(CREATE_BOOK);
         db.execSQL(CREATE_CATEGORY);
         Util.showToastMessage(mContext, "Table Create successful");
@@ -46,10 +48,13 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
      */
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        //db.execSQL("drop table if exists Book");
-        //db.execSQL("drop table if exists Category");
-        //onCreate(db);
-
+        switch (oldVersion){
+            case 1://第一版用户更新至第二步,直接建表category就可以了
+                db.execSQL(CREATE_CATEGORY);
+            case 2:
+                db.execSQL("alter table Book add column category_id integer");
+            default:
+        }
         Util.showToastMessage(mContext, "db update successful");
     }
 

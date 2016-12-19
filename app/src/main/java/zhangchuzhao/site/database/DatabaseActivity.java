@@ -51,7 +51,7 @@ public class DatabaseActivity extends BaseActivity implements View.OnClickListen
         readData = (Button)findViewById(R.id.button_read);
         readData.setOnClickListener(this);
 
-        dbHelper = new MyDatabaseHelper(this, DBNAME, null, 2);
+        dbHelper = new MyDatabaseHelper(this, DBNAME, null, 3);
 
         createDatabase = (Button)findViewById(R.id.button_create_database);
         createDatabase.setOnClickListener(this);
@@ -106,8 +106,8 @@ public class DatabaseActivity extends BaseActivity implements View.OnClickListen
                 //values.put("price", 79.00);
                 //db.insert("Book", null, values);
                 //values.clear();
-                db.execSQL("insert into Book(name, author, pages, price) values(?, ?, ?, ?)", new String[]{"The Da Vinci Code", "Dan Brown", "454", "16.96"});
-                db.execSQL("insert into Book(name, author, pages, price) values(?, ?, ?, ?)", new String[]{"The Lost Symbol", "Dan Brown", "510", "19.95"});
+                db.execSQL("insert into book(name, author, pages, price) values(?, ?, ?, ?)", new String[]{"The Da Vinci Code", "Dan Brown", "454", "16.96"});
+                db.execSQL("insert into book(name, author, pages, price) values(?, ?, ?, ?)", new String[]{"The Lost Symbol", "Dan Brown", "510", "19.95"});
                 Util.showToastMessage(this, "Data insert successful");
                 break;
             case R.id.button_update_data:
@@ -143,13 +143,14 @@ public class DatabaseActivity extends BaseActivity implements View.OnClickListen
                 db.beginTransaction();
                 try{
                     db.delete("Book", null, null);
-                    if (true){
-                        throw new NullPointerException("数据库空指针错误");
-                    }
+                    //if (true){
+                    //    throw new NullPointerException("数据库空指针错误");
+                    //}
                     values.put("name", "Game of Thrones");
                     values.put("author", "George Martin");
                     values.put("pages", 720);
                     values.put("price", 20.00);
+                    values.put("category_id",1);
                     db.insert("Book", null, values);
                     values.clear();
                     db.setTransactionSuccessful();
@@ -157,6 +158,7 @@ public class DatabaseActivity extends BaseActivity implements View.OnClickListen
                     e.printStackTrace();
                 }finally {
                     db.endTransaction();
+                    Util.showToastMessage(this, "Replace Data Successfully");
                 }
                 break;
             default:
